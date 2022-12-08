@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
   {% block content %}
-  <div class="container py-5">
     <h1>Записи сообщества {{ group }}</h1>
-    <article>
-      {% for post in posts %}
-        {% include 'includes/card_post.html'%}
-      {% endfor %} 
-    </article>
-  </div>  
+    {% for post in posts %}
+      {% include 'includes/card_post.html'%}
+    {% endfor %} 
   {% endblock content %}
