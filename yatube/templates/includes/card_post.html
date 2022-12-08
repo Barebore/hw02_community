@@ -1,0 +1,19 @@
+  <h1>{{ slug }}</h1>
+      <ul>
+        <li>
+          Автор: {{ post.author.get_full_name }}
+        </li>
+        <li>
+          Группа: {{ group.title }}
+        </li>
+        <li>
+          Дата публикации: {{ post.pub_date|date:"d E Y" }}
+        </li>
+      </ul>
+      <p>{{ post.text }}</p>    
+      <a href="{% url 'posts:index' %}">На главную</a>
+      <br>
+      <a href="{% url 'posts:group_list' post.group.slug %}">Посмотреть записи группы</a>
+      <br>
+      <a> Хотелось бы, чтобы на главной странице была только ссылка с группами, а на странице с постами группы была ссылка на главную</a>
+      {% if not forloop.last %}<hr>{% endif %}

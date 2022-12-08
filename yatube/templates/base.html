@@ -1,14 +1,18 @@
 <!-- templates/base.html -->
 <!DOCTYPE html> 
 <html lang="ru">          
+  <!DOCTYPE html> <!-- Используется html 5 версии -->
+  <html lang="ru"> <!-- Язык сайта - русский -->
   <head>
-    {% load static %}       
+    {% include 'includes/head.html' %}
   </head>
   <body>       
     <header>
       {% include 'includes/header.html' %}
     </header>
     <main>
+      {% block content %}
+      {% endblock %}
     </main>
     <footer>
       {% include 'includes/footer.html' %} 
